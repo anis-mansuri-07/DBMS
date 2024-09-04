@@ -1,0 +1,8 @@
+alter table
+https://dev.mysql.com/doc/refman/8.4/en/alter-table.html
+
+drop table
+https://dev.mysql.com/doc/refman/8.4/en/drop-table.html
+
+for select table
+https://dev.mysql.com/doc/refman/8.4/en/select.html
