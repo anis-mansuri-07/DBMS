@@ -17,5 +17,8 @@ q4>   11. SELECT p.pname , SUM(qty) from sp , p  where p.pno = sp.pno GROUP by s
 	12. SELECT sp.sno ,sum(qty) from sp where sp.sno < 's4' GROUP BY sp.sno;
       13. SELECT sp.sno , sum(qty) from sp , s WHERE s.s_status = 20 and s.sno = sp.sno GROUP by sp.sno;
 
+q6>   1. SELECT emp.emp_name as "Emp Name", dept.dept_name as "Emp Department", boss.emp_name as "Boss name" ,bdept.dept_name from emp,dept,emp as boss ,dept as bdept WHERE dept.dept_id = emp.emp_dept_id and boss.emp_id = emp.emp_boss_id and bdept.dept_id = boss.emp_dept_id; 
+      2. SELECT emp.emp_name,dept.dept_name,boss.emp_name as "Boss",dept.dept_name , emp.emp_salary as "Emp Salary" , boss.emp_salary AS "Boss salary" FROM emp,emp AS boss,dept,dept AS bossdept WHERE emp.emp_boss_id=boss.emp_id AND emp.emp_dept_id=dept.dept_id AND boss.emp_dept_id=bossdept.dept_id AND emp.emp_salary>boss.emp_salary; 
+
 
 
