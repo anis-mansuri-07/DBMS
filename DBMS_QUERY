@@ -1,0 +1,21 @@
+q2>   1.    SELECT * FROM p  WHERE p_city = 'london'; 
+	2.    SELECT p.pname FROM p ORDER BY p.weight DESC LIMIT 1;
+	3.    SELECT pname , pno , color FROM `p` WHERE color = 'red';
+	4.    SELECT DISTINCT sname,s_city FROM s,sp WHERE s.sno = sp.sno AND qty>200;
+	5.	SELECT p.pname,p.weight FROM p ORDER BY p.weight DESC LIMIT 1 OFFSET 1; 
+
+
+q3>   6.   SELECT sp.sno , sp.qty , p.pname from sp , s , p where s.sno = sp.sno AND p.pno = sp.pno AND p.weight = (SELECT MAX(p.weight) from p);
+		SELECT sp.sno , sp.qty , p.pname from sp , p where p.pno = sp.pno AND p.weight = (SELECT MAX(p.weight) from p); 
+	7.   SELECT  s.sname , sp.qty ,p.color FROM s,sp,p WHERE color = 'red' AND s.sno=sp.sno AND p.pno=sp.pno; 
+	8.   SELECT s.sname , s.s_city , sp.qty FROM s , sp WHERE s.sno = sp.sno AND s.s_status < 30;
+	9.   SELECT sno , SUM(qty) from sp GROUP by sno;
+	10.  SELECT sp.pno , SUM(qty) from sp  GROUP by sp.pno;
+
+
+q4>   11. SELECT p.pname , SUM(qty) from sp , p  where p.pno = sp.pno GROUP by sp.pno;
+	12. SELECT sp.sno ,sum(qty) from sp where sp.sno < 's4' GROUP BY sp.sno;
+      13. SELECT sp.sno , sum(qty) from sp , s WHERE s.s_status = 20 and s.sno = sp.sno GROUP by sp.sno;
+
+
+
