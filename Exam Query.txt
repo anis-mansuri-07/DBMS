@@ -1,0 +1,19 @@
+
+PC no : 149
+Enroll no : 240160510025
+
+1>show all parts located in "ahmedabad" city ::
+
+       SELECT p.pname from p where p.p_city = "ahmedabad";
+
+2> show suppler name and qty for part color is "white" supply ::
+
+       SELECT s.sname , sp.qty from s , sp , p where p.color = "white" and s.sno=sp.sno and p.pno = sp.pno;
+
+3> show all suppler name , parts name which are located in same city ::
+       
+       SELECT s.sname , p.pname from s , p WHERE s.s_city = p.p_city;
+
+6> show each suppers whose suppler number is less then 's4' give total qty supply by each suppler ::
+
+       SELECT sp.sno , sum(sp.qty) from sp where sp.sno < 's4' GROUP by sp.sno;
