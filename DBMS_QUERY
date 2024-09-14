@@ -1,5 +1,5 @@
 q2>   1.    SELECT * FROM p  WHERE p_city = 'london'; 
-	2.    SELECT p.pname FROM p ORDER BY p.weight DESC LIMIT 1;
+	2.    SELECT p.p_name , p.weight from p where p.weight = (SELECT MAX(p.weight) from p);
 	3.    SELECT pname , pno , color FROM `p` WHERE color = 'red';
 	4.    SELECT DISTINCT sname,s_city FROM s,sp WHERE s.sno = sp.sno AND qty>200;
 	5.	SELECT p.pname,p.weight FROM p ORDER BY p.weight DESC LIMIT 1 OFFSET 1; 
