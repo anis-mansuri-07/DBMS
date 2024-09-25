@@ -27,5 +27,8 @@ emp.emp_dept_id=dept.dept_id group by dept.dept_name;
 emp,dept where
 emp_dept_id=dept.dept_id group by dept.dept_name;
 
+Extra : boss not include : SELECT dept.dept_name , emp.emp_name ,emp.emp_salary from emp , dept where 
+dept.dept_id = emp.emp_dept_id and emp.emp_id not in (SELECT emp.emp_boss_id from emp);
+
 Q8>   
 
